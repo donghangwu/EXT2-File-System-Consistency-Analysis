@@ -272,7 +272,9 @@ def main():
 
     # key: inode's number, value: inode parent's number
     # set default to 2, least inode number for dirent
-    parents = defaultdict(lambda: 2)
+    parents = defaultdict(int)
+    parents["2"] = 2
+
     for entry in dirents:
         node_links[str(entry.node_num)] += 1
         if entry.node_num < 1 or entry.node_num > superBlock.inodes_count:
@@ -294,7 +296,6 @@ def main():
         else:
             parents[str(entry.node_num)] = entry.parent
 
-    # check parents
     for entry in dirents:
         parent = parents[str(entry.node_num)]
         if entry.name == "'..'" and entry.node_num != parent:
