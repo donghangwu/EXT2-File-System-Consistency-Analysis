@@ -2,4 +2,8 @@ NAME: Donghang Wu, Tristan Que
 ID: 605346965, 505379744
 EMAIL: dwu20@g.ucla.edu, tristanq816@gmail.com
 
+lab3b.py: python script reads a csv file and check if it's a has any inconsistency 
 
+buildpy.sh: shell script create lab3b and runs lab3b.py 
+
+Makefile: build the python script and create a tarball for submission
